@@ -36,7 +36,7 @@ public class AdminCommandsListener implements IListener<MessageReceivedEvent> {
                         if(Main.electroid.isLoggedIn())Main.electroid.logout();
 
 
-            }
+                    }
 
 
 
