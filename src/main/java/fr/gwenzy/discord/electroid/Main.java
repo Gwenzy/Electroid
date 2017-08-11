@@ -27,11 +27,12 @@ public class Main {
         ClientBuilder clientBuilder = new ClientBuilder(); // Creates the ClientBuilder instance
         clientBuilder.withToken(token); // Adds the login info to the builder
         try {
-            clientBuilder.registerListener(new AdminCommandsListener());
+            /*clientBuilder.registerListener(new AdminCommandsListener());
             clientBuilder.registerListener(new ModeratorCommandsListener());
             clientBuilder.registerListener(new MemberCommandsListener());
             clientBuilder.registerListener(new ResistorCommandsListener());
-            clientBuilder.registerListener(new ReadyListener());
+            clientBuilder.registerListener(new ReadyListener());*/
+            clientBuilder.registerListener(new AddRessourceCommandListener());
 
             if (login) {
                 return clientBuilder.login(); // Creates the client instance and logs the client in
@@ -49,6 +50,6 @@ public class Main {
         commands=0;
         ResistorsMethods.initResistors();
 
-        electroid = createClient("TOKEN", true);
+        electroid = createClient(Tokens.getTokenElectroid(), true);
     }
 }
